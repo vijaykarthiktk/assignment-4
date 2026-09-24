@@ -542,13 +542,15 @@ class _AnimationScreenState extends State<AnimationScreen> {
                       children: [
                         Icon(Icons.tune_rounded, color: Color(0xFF6366F1), size: 20),
                         SizedBox(width: 8),
-                        Text(
-                          'Live Property Inspector',
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontSize: 15,
-                            fontWeight: FontWeight.w700,
-                            color: Color(0xFF1E293B),
+                        Expanded(
+                          child: Text(
+                            'Live Property Inspector',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: 15,
+                              fontWeight: FontWeight.w700,
+                              color: Color(0xFF1E293B),
+                            ),
                           ),
                         ),
                       ],
