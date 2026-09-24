@@ -26,6 +26,12 @@ class _ImageGridScreenState extends State<ImageGridScreen> {
   // Local image assets list registered in pubspec.yaml
   final List<ImageItem> _images = const [
     ImageItem(
+      title: 'Vijay Karthik',
+      category: 'Profile',
+      description: 'Flutter Full Stack Developer (vijaykarthiktk@gmail.com) • LinkedIn: @vijaykaarthiktk.',
+      assetPath: 'assets/images/profile.jpg',
+    ),
+    ImageItem(
       title: 'Serene Valley',
       category: 'Nature',
       description: 'A breathtaking vista of lush green valleys, meandering rivers, and distant mountain ridges.',

@@ -12,8 +12,8 @@ class _FormScreenState extends State<FormScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   // TextEditingControllers for form fields
-  final TextEditingController _fullNameController = TextEditingController();
-  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _fullNameController = TextEditingController(text: 'Vijay Karthik');
+  final TextEditingController _emailController = TextEditingController(text: 'vijaykarthiktk@gmail.com');
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _bioController = TextEditingController();
@@ -279,20 +279,40 @@ class _FormScreenState extends State<FormScreen> {
                   ),
                 ],
               ),
-              child: const Row(
+              child: Row(
                 children: [
-                  CircleAvatar(
-                    backgroundColor: Colors.white24,
-                    radius: 24,
-                    child: Icon(Icons.assignment_turned_in_rounded, color: Colors.white, size: 28),
+                  Container(
+                    width: 52,
+                    height: 52,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(color: Colors.white, width: 2),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withValues(alpha: 0.15),
+                          blurRadius: 6,
+                          offset: const Offset(0, 2),
+                        ),
+                      ],
+                    ),
+                    child: ClipOval(
+                      child: Image.asset(
+                        'assets/images/profile.jpg',
+                        fit: BoxFit.cover,
+                        errorBuilder: (context, error, stackTrace) => const CircleAvatar(
+                          backgroundColor: Colors.white24,
+                          child: Icon(Icons.person, color: Colors.white),
+                        ),
+                      ),
+                    ),
                   ),
-                  SizedBox(width: 16),
-                  Expanded(
+                  const SizedBox(width: 16),
+                  const Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Form Validation Engine',
+                          'Vijay Karthik T K',
                           style: TextStyle(
                             fontFamily: 'Poppins',
                             color: Colors.white,
@@ -300,13 +320,14 @@ class _FormScreenState extends State<FormScreen> {
                             fontWeight: FontWeight.w700,
                           ),
                         ),
-                        SizedBox(height: 4),
+                        SizedBox(height: 2),
                         Text(
-                          'Powered by GlobalKey<FormState>, TextFormField validators & SnackBar alerts.',
+                          'vijaykarthiktk@gmail.com',
                           style: TextStyle(
                             fontFamily: 'Poppins',
                             color: Colors.white70,
                             fontSize: 12,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
                       ],
@@ -379,7 +400,7 @@ class _FormScreenState extends State<FormScreen> {
                         textInputAction: TextInputAction.next,
                         decoration: _buildInputDecoration(
                           labelText: 'Email Address',
-                          hintText: 'alex@example.com',
+                          hintText: 'vijaykarthiktk@gmail.com',
                           prefixIcon: Icons.mail_outline_rounded,
                         ),
                         validator: (value) {

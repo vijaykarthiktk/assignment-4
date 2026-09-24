@@ -48,7 +48,12 @@ void main() {
     expect(find.text('Phone Number'), findsOneWidget);
     expect(find.text('Password'), findsOneWidget);
 
-    // Ensure Submit button is visible and tap
+    // Test Reset button to clear pre-filled fields
+    await tester.ensureVisible(find.text('Reset'));
+    await tester.tap(find.text('Reset'));
+    await tester.pumpAndSettle();
+
+    // Tap Submit on empty form
     await tester.ensureVisible(find.text('Submit Form'));
     await tester.tap(find.text('Submit Form'));
     await tester.pumpAndSettle();
@@ -58,11 +63,6 @@ void main() {
     expect(find.text('Email address is required'), findsOneWidget);
     expect(find.text('Phone number is required'), findsOneWidget);
     expect(find.text('Password is required'), findsOneWidget);
-
-    // Test Reset
-    await tester.ensureVisible(find.text('Reset'));
-    await tester.tap(find.text('Reset'));
-    await tester.pumpAndSettle();
 
     // Go back to home
     await tester.tap(find.byType(BackButton));
